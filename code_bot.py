@@ -25,4 +25,4 @@ async def on_message(message):
 
 
 
-client.run("MTI1MDYzMjY0NzEzNTQ2NTQ3Mg.GL9Bjr.a0oxki_03NCq7zpFsXddzYVGXIyhbfXGjjHfc0")
+client.run("put your token here")
