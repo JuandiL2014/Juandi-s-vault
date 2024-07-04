@@ -1,0 +1,23 @@
+import discord
+# La variable intents almacena los privilegios del bot
+intents = discord.Intents.default()
+# Activar el privilegio de lectura de mensajes
+intents.message_content = True
+# Crear un bot en la variable cliente y transferirle los privilegios
+client = discord.Client(intents=intents)
+
+
+@client.event
+async def on_ready():
+    print(f'Hemos iniciado sesión como {client.user}')
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content.startswith('hola deyus bot vuelvete ambientalista'):
+        await message.channel.send("hola! claro me voy a volver ambientalista ahora como plantas umhn que rica esta 😋🥬 ahora te puedo decir cosas ambientalistas que es lo que justo ahora voy a hacer")
+    elif message.content.startswith('dame soluciones para no contaminar el medio ambiente'):
+        await message.channel.send("claro te voy a dar una manualidad que puede ayudar al medio ambiente es crear una bolsa reutilizable a partir de camisetas viejas. Este proyecto no solo reduce el desperdicio al reutilizar ropa que ya no usas, sino que también disminuye la necesidad de bolsas de plástico desechables. Aquí tienes los pasos para hacerlo:Materiales:Una camiseta viejaTijerasAguja e hilo (opcional) o una máquina de coserInstrucciones:Preparación de la camiseta:Elige una camiseta vieja que ya no uses.Coloca la camiseta en una superficie plana y corta las mangas a lo largo de las costuras.Formación de las asas:Corta el cuello de la camiseta para crear la abertura superior de la bolsa. Puedes hacer el corte en forma de U para que sea más cómodo de llevar.Cerrar el fondo de la camiseta:Voltea la camiseta del revés.Une el borde inferior de la camiseta. Puedes hacer esto de varias formas:Con costura: Cose el borde inferior con una máquina de coser o a mano con aguja e hilo, asegurándote de que la costura sea resistente.Sin costura: Si prefieres no coser, puedes hacer cortes en flecos de unos 2 cm en el borde inferior de la camiseta y luego anudar los flecos juntos para cerrar la parte inferior de la bolsa.Opcional: Refuerzo:Si deseas una bolsa más resistente, puedes hacer una costura doble en la parte inferior o reforzar las asas con costuras adicionales.Voltea la bolsa:Una vez que hayas terminado, voltea la camiseta del derecho. Ahora tienes una bolsa reutilizable hecha a partir de una camiseta vieja.Beneficios:Reutilización: Aprovechas camisetas viejas en lugar de desecharlas.Reducción de plásticos: Disminuyes el uso de bolsas de plástico desechables.Simplicidad: Es un proyecto fácil y rápido que no requiere muchos materiales ni herramientas.Esta manualidad es una excelente manera de contribuir a la reducción de residuos y fomentar hábitos más sostenibles en tu vida diaria.")
+    
+client.run("tu este de discord")
